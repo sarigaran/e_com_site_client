@@ -1,14 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Card } from 'antd';
+import { useSelector } from 'react-redux';
 
 function OrdersPage() {
-  const [orders, setOrders] = useState([]);
-
-  useEffect(() => {
-    const storedOrders = JSON.parse(localStorage.getItem('orders')) || [];
-    setOrders(storedOrders);
-  }, []);
-
+  const { orders } = useSelector((state) => state.orderslice);
   return (
     <div>
       <h2>Order History</h2>
@@ -33,10 +28,10 @@ function OrdersPage() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <img
                     src={item.image}
-                    alt={item.title}
+                    alt={item.name}
                     style={{ height: '50px', width: '50px', borderRadius: '5px' }}
                   />
-                  <p>{item.title}</p>
+                  <p>{item.name}</p>
                 </div>
                 <p>
                   <strong>{item.quantity}</strong> &nbsp;<strong>X</strong>&nbsp;

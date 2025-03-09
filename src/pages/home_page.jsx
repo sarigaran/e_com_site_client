@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { Card } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCategory, getProduct } from '../../redux/slice';
 import { useNavigate } from 'react-router-dom';
+import { getCategory } from '../redux/slice/product_slice';
 
 const { Meta } = Card;
 
@@ -14,12 +14,9 @@ const HomePage = () => {
     dispatch(getCategory());
   }, []);
 
-  const handleClick = async (item) => {
-    await dispatch(getProduct(item));
-    localStorage.setItem('selectedProduct', item);
-    navigate('/products');
+  const handleClick = (item) => {
+    navigate(`/products`, { state: { category: item } });
   };
-
   return (
     <div className='grid-container'>
       {categorydata?.map((item, index) => (

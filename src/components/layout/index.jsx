@@ -2,11 +2,13 @@ import React from 'react';
 import { Badge, Button, Dropdown, Layout, Space } from 'antd';
 import { SettingOutlined, ShoppingCartOutlined } from '@ant-design/icons';
 import { Outlet, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 const { Header, Content } = Layout;
 
 const AppLayout = () => {
   const navigate = useNavigate();
-  const data = localStorage.getItem('cart') && JSON.parse(localStorage.getItem('cart'));
+  const data = useSelector((state) => state.cartSlice.cart);
+
   const handleClick = (val) => {
     navigate(val);
   };

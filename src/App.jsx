@@ -3,11 +3,12 @@ import './App.css';
 import AppLayout from './components/layout';
 import { store } from './redux/store';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import ListItem from './components/pages/list_item_page';
-import HomePage from './components/pages/home_page';
-import ViewProduct from './components/pages/view_product_page';
-import CartPage from './components/pages/cart_page';
-import OrdersPage from './components/pages/order_list_page';
+import HomePage from './pages/home_page';
+import ListItem from './pages/list_item_page';
+import ViewProduct from './pages/view_product_page';
+import CartPage from './pages/cart_page';
+import OrdersPage from './pages/order_list_page';
+
 
 function App() {
   return (
