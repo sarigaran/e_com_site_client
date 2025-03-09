@@ -52,13 +52,25 @@ const productSlice = createSlice({
       .addCase(getProduct.rejected, (state) => {
         state.loading = false;
       })
+      .addCase(getSingleProduct.pending, (state) => {
+        state.loading = true;
+      })
       .addCase(getSingleProduct.fulfilled, (state, action) => {
         state.loading = false;
         state.singleproductdata = action.payload;
       })
+      .addCase(getSingleProduct.rejected, (state) => {
+        state.loading = false;
+      })
+      .addCase(getCategory.pending, (state) => {
+        state.loading = true;
+      })
       .addCase(getCategory.fulfilled, (state, action) => {
         state.loading = false;
         state.categorydata = action.payload;
+      })
+      .addCase(getCategory.rejected, (state) => {
+        state.loading = false;
       });
   },
 });
