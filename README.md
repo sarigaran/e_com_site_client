@@ -23,5 +23,5 @@ This is a fully functional **E-Commerce frontend** built using **React and Redux
    git clone https://github.com/sarigaran/e_com_site_client.git
 
 ##  Run the project
-  npm i
+  npm i ,
   npm run dev
