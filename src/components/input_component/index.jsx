@@ -42,7 +42,7 @@ function AddToCart({ item }) {
   };
 
   return (
-    <div>
+    <div style={{ display: 'flex', gap: '16px' }}>
       <Button onClick={() => handleQuantityChange(count + 1)}>+</Button>
       <InputNumber min={0} value={count} onChange={handleQuantityChange} />
       <Button onClick={() => handleQuantityChange(count - 1)}>-</Button>

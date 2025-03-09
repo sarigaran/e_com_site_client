@@ -12,7 +12,6 @@ const orderSlice = createSlice({
         id: `ORD-${Date.now()}`,
         items: cart,
         total: totalPrice,
-        date: new Date().toLocaleString(),
       };
 
       state.orders.push(newOrder);

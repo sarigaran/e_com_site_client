@@ -19,22 +19,25 @@ function ViewProduct() {
   }
 
   return (
-    <div style={{ display: 'flex', gap: '20px' }}>
-      <div className='imageWrapper'>
-        <img src={singleproductdata.image} alt='image' style={{ height: '200px', width: '200px' }} />
-      </div>
+    <>
+      <h1>Product View</h1>
+      <div style={{ display: 'flex', gap: '20px' }}>
+        <div className='imageWrapper'>
+          <img src={singleproductdata.image} alt='image' style={{ height: '200px', width: '200px' }} />
+        </div>
 
-      <div className='imageWrapper'>
-        <div>
-          <h1>{singleproductdata.title}</h1>
-          <p>{singleproductdata.description}</p>
-          <p>
-            <b>Price: $ {singleproductdata.price}</b>
-          </p>
-          <AddToCart item={singleproductdata} />
+        <div className='imageWrapper'>
+          <div>
+            <h1>{singleproductdata.title}</h1>
+            <p>{singleproductdata.description}</p>
+            <p>
+              <b>Price: $ {singleproductdata.price}</b>
+            </p>
+            <AddToCart item={singleproductdata} />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

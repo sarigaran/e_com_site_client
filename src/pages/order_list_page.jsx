@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 
 function OrdersPage() {
   const { orders } = useSelector((state) => state.orderslice);
+
   return (
     <div>
       <h2>Order History</h2>
@@ -20,11 +21,7 @@ function OrdersPage() {
             </div>
             <h4>Items:</h4>
             {order.items.map((item) => (
-              <div
-                key={item.id}
-                className='cartwrapper'
-                style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}
-              >
+              <div key={item.id} className='cartwrapper'>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <img
                     src={item.image}

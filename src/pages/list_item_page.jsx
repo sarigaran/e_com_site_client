@@ -20,13 +20,13 @@ function ListItem() {
   }, [category, dispatch]);
 
   const cardClick = (item, event) => {
-    if (event) event.stopPropagation(); 
+    if (event) event.stopPropagation();
     navigate(`/products/view`, { state: { productId: item.id } });
   };
-  console.log('productdata', productdata);
 
   return (
     <div>
+      <h1>Product List</h1>
       <div className='grid-container'>
         {productdata?.map((item) => (
           <Card
